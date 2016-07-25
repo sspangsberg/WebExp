@@ -1,0 +1,32 @@
+div
+{
+	display: inline-block;
+}	
+
+#blue
+{
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+
+#green
+{
+	width: 100px;
+	height: 100px;
+	background-color: green;
+}
+
+#yellow
+{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+}
+
+#red
+{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
