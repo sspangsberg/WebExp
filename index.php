@@ -1,3 +1,5 @@
+<?php require 'db.php' ?>
+
 <html>
   <head>
     <title>Common Cents Party</title>
@@ -21,8 +23,11 @@
         <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-1/band.jpg" />
         <p>
           Common Cents Party, a hard-hitting acoustic punk/electronic four-piece from Atlanta, Georgia, combines an unleashed live performance with edgy lyrics, unforgettable hooks and well-studied synth-rock sounds. A must-see, must-hear new band." -Screech Magazine
+          <?php retrieveUsers(); ?>
         </p>
         <a href="shows.html">Here's a list of upcoming shows</a>
+        
+
       </div>
     </div>
   </body>
