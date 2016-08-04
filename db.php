@@ -11,14 +11,17 @@ function connectToDB()
 
 function closeDB()
 {
-}	
+}
 
 
+/**
+ *
+ */
 function retrieveUsers()
 {
 	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "";
 	$dbname = "test";	
 	
 	// Create connection
@@ -30,26 +33,31 @@ function retrieveUsers()
     	die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	echo "Connected successfully";
+	//echo "Connected successfully";
 
-	$sql = "SELECT ID, username FROM User";
+	$sql = "SELECT ID, text FROM text WHERE id = 1";
 	$result = $conn->query($sql);
+    $data = "0 results";
 
-
-	if ($result->num_rows > 0) 
+	if ($result->num_rows > 1)
 	{
+	    $data = $result;
+	    /*
 	    // output data of each row
-	    while($row = $result->fetch_assoc()) 
+	    while($row = $result->fetch_assoc())
 	    {
-	        echo "<br/>id: " . $row["ID"] . " - Username: " . $row["username"] . "<br>";
+	        "<br/>id: " . $row["ID"] . " - Username: " . $row["username"] . "<br>";
 	    }
-	} 
-	else 
-	{
-	    echo "0 results";
+	    */
 	}
+	else if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $data = $row["text"];
+	}
+    $conn->close();
 
-	$conn->close();
+
+    return $data;
 }
 
 ?>
