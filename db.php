@@ -17,7 +17,7 @@ function closeDB()
 /**
  *
  */
-function retrieveUsers()
+function retrieveContent($id)
 {
 	$servername = "localhost";
 	$username = "root";
@@ -35,7 +35,7 @@ function retrieveUsers()
 	
 	//echo "Connected successfully";
 
-	$sql = "SELECT ID, text FROM text WHERE id = 1";
+	$sql = "SELECT ID, text FROM text WHERE id = " . $id;
 	$result = $conn->query($sql);
     $data = "0 results";
 

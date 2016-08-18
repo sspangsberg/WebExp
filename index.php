@@ -1,4 +1,4 @@
-<?php require_once "db.php"?>
+<?php require_once "controller.php"?>
 
 <!DOCTYPE html>
 <html>
@@ -7,27 +7,26 @@
     <link rel='stylesheet' href='stylesheet.css'/>
 </head>
 <body>
+
 <div class="header">
+
     <div class="container">
         <h1>
-            Innovation Cloud
+            <?php echo retrieveContent(2); ?>
         </h1>
+
+        <!--
         <p>
             Connect your ideas globally
         </p>
         <a class="btn" href="">Learn More</a>
+        -->
     </div>
 </div>
 
 <div class="nav">
     <div class="container">
-        <ul>
-            <li>Register</li>
-            <li>Schedule</li>
-            <li>Sponsors</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
+        <?php require_once "menu.html"?>
     </div>
 </div>
 
@@ -35,10 +34,11 @@
     <div class="container">
         <img src="https://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/cloud.svg" height="128" width="196"/>
 
-        <h2>The Innovation Cloud Conference</h2>
-        <?php echo retrieveUsers(); ?>
+        <?php echo handleRequest($_GET["id"]); ?>
+
     </div>
 </div>
+<!--
 <div class="jumbotron">
     <div class="container">
 
@@ -51,9 +51,10 @@
         <a class="btn" href="">Join</a>
     </div>
 </div>
+-->
 <div class="footer">
     <p>
-        @Innovation Cloud Conference
+        <a class="btn" href="">Admin</a>
     </p>
 </div>
 </body>
